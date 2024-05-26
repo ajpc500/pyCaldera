@@ -1,0 +1,14 @@
+---
+
+- id: c730bb97-d247-459a-8564-24dccd640bba
+  name: Enumerate Domain Trusts with Nltest
+  description: Use the built-in nltest.exe executable to enumerate the domain trusts in the Active Directory environment
+  tactic: discovery
+  technique:
+    attack_id: T1482
+    name: Domain Trust Discovery
+  platforms:
+    windows:
+      cmd:
+        command: |
+          nltest /domain_trusts /all_trusts

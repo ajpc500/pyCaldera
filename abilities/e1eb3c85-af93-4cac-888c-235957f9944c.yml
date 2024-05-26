@@ -1,0 +1,14 @@
+---
+
+- id: e1eb3c85-af93-4cac-888c-235957f9944c
+  name: Enumerate Domain Admins with Net
+  description: Use the built-in net.exe executable to enumerate members of the Domain Admins group in the Active Directory environment
+  tactic: discovery
+  technique:
+    attack_id: T1087.002
+    name: "Account Discovery: Domain Account"
+  platforms:
+    windows:
+      cmd:
+        command: |
+          net group "Domain Admins" /domain

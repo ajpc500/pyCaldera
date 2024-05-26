@@ -1,0 +1,17 @@
+---
+
+- id: 2a2867c0-062e-4ab8-8096-0d5072b06fff
+  name: Enumerate Servers with PowerView
+  description: Use powerview's Get-DomainComputer cmdlet to enumerate servers in the Active Directory environment based on their operating system
+  tactic: discovery
+  technique:
+    attack_id: T1018
+    name: Remote System Discovery
+  platforms:
+    windows:
+      psh:
+        command: |
+          Import-Module .\PowerView.ps1 -Force; 
+          Get-DomainComputer -OperatingSystem *server* -Properties dnshostname
+        payloads:
+        - powerview.ps1

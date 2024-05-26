@@ -1,0 +1,14 @@
+---
+
+- id: 3b6fa618-b650-4691-8d58-b3239752565b
+  name: Enumerate Domain Controllers with Nltest
+  description: Use the built-in nltest.exe executable to enumerate domain controllers in the Active Directory environment
+  tactic: discovery
+  technique:
+    attack_id: T1018
+    name: Remote System Discovery
+  platforms:
+    windows:
+      cmd:
+        command: |
+          nltest /dclist:%USERDOMAIN%

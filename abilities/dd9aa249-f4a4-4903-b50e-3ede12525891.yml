@@ -1,0 +1,17 @@
+---
+
+- id: dd9aa249-f4a4-4903-b50e-3ede12525891
+  name: Find Kerberoastable Users with PowerView
+  description: Use powerview's Get-DomainUser cmdlet to enumerate users in the Active Directory environment using an LDAP filter to find those with the servicePrincipalName attribute populated
+  tactic: discovery
+  technique:
+    attack_id: T1087.002
+    name: 'Account Discovery: Domain Account'
+  platforms:
+    windows:
+      psh:
+        command: |
+          Import-Module .\PowerView.ps1 -Force; 
+          Get-DomainUser -SPN
+        payloads:
+        - powerview.ps1
